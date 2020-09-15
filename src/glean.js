@@ -6,7 +6,6 @@
 
 const Storage = require('./storage');
 
-
 class Glean {
   constructor(appId) {
     this._eventStorage = new Storage(appId)
@@ -26,3 +25,5 @@ class Glean {
         glean._eventStorage.record(Date.now(), "window", "onload", { "what": "it-works" })
     });
 })();
+
+window.Glean = Glean
